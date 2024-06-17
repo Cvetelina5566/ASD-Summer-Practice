@@ -33,8 +33,4 @@ PBM_Image* readPBM_P4(char *filename);
 void writePBM_P4(char *filename, PBM_Image *image);
 void freePBM_P4(PBM_Image *image);
 
-PBM_Image* readPBM_P1(char *filename);
-void writePBM_P1(char *filename, PBM_Image *image);
-void freePBM_P1(PBM_Image *image);
-
 #endif // IMAGE_IO_H
