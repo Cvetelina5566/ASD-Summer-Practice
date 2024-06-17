@@ -11,8 +11,7 @@ int main() {
   printf("Select image format:\n");
   printf("1. PPM (P6)\n");
   printf("2. PBM (P4)\n");
-  printf("3. PBM (P1)\n");
-  printf("4. PGM (P5)\n");
+  printf("3. PGM (P5)\n");
   printf("Enter your choice: ");
   scanf("%d", &choice);
 
@@ -66,23 +65,6 @@ int main() {
     HuffmanCodes(data, freq, size, image->data, data_size, output_file);
     freePBM_P4(image);
   } else if (choice == 3) {
-    PBM_Image *image = readPBM_P1(input_file);
-    if (image == NULL) {
-      printf("Error reading PBM file.\n");
-      return 1;
-    }
-    int data_size = image->width * image->height;
-    int freq[2] = {0};
-
-    for (int i = 0; i < data_size; ++i) {
-      freq[image->data[i]]++;
-    }
-
-    unsigned char data[2] = {0, 1};
-
-    HuffmanCodes(data, freq, 2, image->data, data_size, output_file);
-    freePBM_P1(image);
-  } else if (choice == 4) {
     PGM_Image *image = readPGM(input_file);
     if (image == NULL) {
       printf("Error reading PGM file.\n");
